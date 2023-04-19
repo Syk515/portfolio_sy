@@ -3,13 +3,12 @@ body {
   font-size: 15px;
   letter-spacing: .05em;
   color: #5e5343;
-  /*background-color: #f8f3f2;*/
 }
 
 a {
   transition: opacity .3s;
   text-decoration: none;
-  color: #1ca9e3;
+  color: #5e5343;
 }
 
 img {
@@ -40,7 +39,7 @@ img {
   padding: 90px 0;
 }
 
-.section:nth-of-type(odd) {
+.section:nth-of-type(even) {
   background-color: #f8f3f2;
 }
 
@@ -169,10 +168,11 @@ img {
 }
 
 .works-item {
-  width: 31.74603%;
-  margin-right: 1.58730%;
+  width: 33%;
+  /* margin-right: 1.58730%; */
   margin-bottom: 40px;
   color: #333;
+  padding: 10px;
 }
 
 .works-item:hover {
@@ -185,6 +185,9 @@ img {
 
 .works-img img {
   border: 1px solid #e6e6e6;
+  width: 100%;
+  object-fit: cover;
+  max-width: 350px;
 }
 
 .works-name {
@@ -279,6 +282,8 @@ img {
 .contact-text {
   margin-top: 10px;
 }
+
+
 /*--------------------------------
  ページトップ
 ---------------------------------*/
@@ -310,7 +315,7 @@ img {
 }
 
 /*--------------------------------
- 下層：Worksページ
+　Worksページ
 ---------------------------------*/
 .article {
   padding: 80px 0;
@@ -371,8 +376,42 @@ img {
   margin-bottom: 30px;
 }
 
+.article-body a {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.article-body a:hover {
+  color:#797979;
+}
+
 .home-link {
   text-align: center;
+}
+
+.home-link a {
+  position: relative;
+  font-size: 13px;
+  font-weight: bold;
+  transition: .3s;
+  padding-bottom: 5px;
+}
+
+.home-link a:after {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  content: "";
+  transition: .3s;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  background-color: #333;
+}
+
+.home-link a:hover:after {
+  width: 100%;
 }
 
 /*media Queries 767
@@ -467,6 +506,7 @@ img {
 
   .works-info {
     margin-top: 3px;
+    font-size: 7px;
   }
 
   .works-list {
@@ -527,7 +567,7 @@ img {
     padding: 20px;
   }
 
-  /* 下層ページ */
+  /* Worksページ */
   .article {
     padding: 50px 0;
   }
@@ -545,5 +585,9 @@ img {
     font-size: 14px;
     line-height: 1.7;
     margin-bottom: 20px;
+  }
+
+  .home-link a:after {
+    display: none;
   }
 }
